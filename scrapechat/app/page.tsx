@@ -4,23 +4,6 @@ import Link from "next/link";
 export default function Home() {
   return (
     <div>
-      <header className="flex h-12 align-left border-b border-zinc-200  px-4 dark:border-zinc-700 bg-[rgb(22,21,21)]">
-        <div className="h-full flex items-center gap-2">
-          <div ><Image
-            
-            src="/main_logo.png"
-            alt="Next.js logo"
-            width={100}
-            height={20}
-            priority
-            
-          />
-           </div>
-          </div>
-        
-      </header>
-
-      
       
       <main className="flex min-h-screen w-full flex-col items-center justify-top align-center py-32 px-16 bg-white dark:bg-black ">
         

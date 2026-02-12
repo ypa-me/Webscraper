@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import localFont from "next/font/local";
+
 import "./globals.css";
+import Image from "next/image";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,10 +34,30 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" >
+      
       <body
-        className={`${adwaitaMono.variable} antialiased`}
-      >
-        {children}
+        className={`${adwaitaMono.variable} antialiased`}>
+          <header className="flex h-12 align-left border-b border-zinc-200  px-4 dark:border-zinc-700 bg-[rgb(22,21,21)]">
+          <div className="h-full flex items-center gap-2">
+          <div ><Image
+            
+            src="/main_logo.png"
+            alt="Next.js logo"
+            width={100}
+            height={20}
+            priority
+            
+          />
+           </div>
+          </div>
+        
+      </header>
+        
+        
+        <main>{children}</main>
+        
+
+
       </body>
     </html>
   );
