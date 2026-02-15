@@ -15,7 +15,7 @@ type ScrapeResult = {
 };
 
 export default async function ResultPageContent() {
-  await connection()
+  
   
   
   const searchParams = useSearchParams();
