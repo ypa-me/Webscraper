@@ -1,7 +1,10 @@
 'use client';
 
+
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
+
+import { connection } from 'next/server'
 
 type ScrapeResult = {
   success?: boolean;
@@ -11,9 +14,14 @@ type ScrapeResult = {
   fullHTML: string;
 };
 
-export default function ResultPage() {
+export default async function ResultPageContent() {
+  await connection()
+  
+  
   const searchParams = useSearchParams();
   const url = searchParams.get('url');
+  
+  
 
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState<ScrapeResult | null>(null);
@@ -46,6 +54,9 @@ export default function ResultPage() {
 
     run();
   }, [url]);
+
+ 
+
 
   if (loading) {
     return (
