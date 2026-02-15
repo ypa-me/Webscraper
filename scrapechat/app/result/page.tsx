@@ -4,6 +4,7 @@ export const dynamic ='force-dynamic'
 
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
+import { connection } from 'next/server'
 
 
 
@@ -57,7 +58,7 @@ export default async function ResultPageContent() {
   }, [url]);
 
  
-
+  await connection()
 
   if (loading) {
     return (
