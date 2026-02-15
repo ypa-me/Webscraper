@@ -90,7 +90,7 @@ export async function GET(request: NextRequest){
     console.error('Scrape error:', error);
 
     // Handle timeout specifically
-    if (error.name === 'AbortError') {
+    if (error instanceof Error && error.name === 'AbortError') {
       return NextResponse.json(
         { 
           success: false, 
