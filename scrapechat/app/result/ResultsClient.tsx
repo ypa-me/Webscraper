@@ -28,17 +28,12 @@ export default function ResultClient({
 
   // Retry functionality (uses the url prop)
   useEffect(() => {
-    if (initialError) {
-      setError(initialError);
-      return;
+   if (url && !result && !loading && !error) {
+      handleFetch();
     }
-    
-    if (!initialResult && !initialError) {
-      setError('No URL provided');
-    }
-  }, [initialResult, initialError]);
+  }, [url, result, loading, error]);
 
-  const handleRetry = async () => {
+  const handleFetch = async () => {
     if (!url) {
       setError('No URL provided');
       return;
@@ -97,7 +92,7 @@ export default function ResultClient({
           <h1 className="text-2xl font-bold text-white mb-4">Scraping Error</h1>
           <p className="text-white max-w-md mx-auto mb-8">{error}</p>
           <button 
-            onClick={handleRetry}
+            onClick={handleFetch}
             className="inline-flex items-center px-6 py-3 bg-black text-gray-500 text-sm font-medium rounded-lg hover:bg-white border border-white transition-colors"
           >
             Try Again
