@@ -30,9 +30,7 @@ async function fetchWithTimeout(url: string, ms: number = 600000): Promise<Respo
 
 export async function GET(request: NextRequest){
     const{searchParams} = new URL(request.url);
-    
-    
-
+  
     const targetUrl = searchParams.get('url');
 
     if(!targetUrl){
