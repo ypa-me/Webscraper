@@ -13,7 +13,7 @@ export default function Home() {
             ScrapeChat
           </h1>
 
-          <h3 className="max-w-xs text-3xl   tracking-tight text-gray-900 dark:text-zinc-50">
+          <h3 className="max-w-xs text-3xl font-sans  tracking-tight text-gray-900 dark:text-zinc-50">
             Your all-in-one webscraping solution.
           </h3>
 
@@ -21,7 +21,7 @@ export default function Home() {
         </div>
         <div>
           <Link href="/process">
-            <button className="max-w-xs rounded-md bg-black px-4 py-2 text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 dark:bg-zinc-50 dark:text-black dark:hover:bg-zinc-300">
+            <button className="max-w-xs font-sans rounded-md bg-black px-4 py-2 text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 dark:bg-zinc-50 dark:text-black dark:hover:bg-zinc-300">
               Get Started
             </button>
           </Link>
